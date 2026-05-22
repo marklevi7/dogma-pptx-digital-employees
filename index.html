@@ -347,7 +347,7 @@
   td.v { color: var(--text); font-variant-numeric: tabular-nums; }
   td.stage { color: var(--text); font-weight: 600; width: 20%; padding-left: 0; }
   td.desc { color: var(--muted); }
-  td.time { color: var(--soft); white-space: nowrap; width: 16%; font-variant-numeric: tabular-nums; }
+  td.time { color: var(--text); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; width: 18%; }
   td.price { color: var(--text); font-variant-numeric: tabular-nums; text-align: right; padding-right: 0; white-space: nowrap; width: 18%; }
   .placeholder { color: var(--dim); }
 
@@ -590,8 +590,8 @@
     .slide.wide tr:has(td.stage):first-child { border-top: 0; }
     .slide.wide tr:has(td.stage) td { padding: 0; border: 0; width: auto; }
     .slide.wide td.stage { grid-column: 1; grid-row: 1; font-size: 16px; }
-    .slide.wide td.time  { grid-column: 2; grid-row: 1; font-size: 13px; }
-    .slide.wide td.price { grid-column: 3; grid-row: 1; font-size: 15px; }
+    .slide.wide td.time  { grid-column: 2; grid-row: 1; font-size: 14px; }
+    .slide.wide td.price { grid-column: 3; grid-row: 1; font-size: 14px; }
     .slide.wide td.desc  { grid-column: 1 / -1; grid-row: 2; font-size: 13px; line-height: 1.45; color: var(--muted); }
 
     /* Closing CTA: a little less air to keep it on one screen */
@@ -876,7 +876,7 @@
     <div class="slide-inner center stack">
       <img class="mlc-mark" src="assets/mldi-logo.svg" alt="MLDI">
       <h1>AI Employees</h1>
-      <div class="tag">Internal master deck &middot; v62</div>
+      <div class="tag">Internal master deck &middot; v63</div>
     </div>
   </section>
 
@@ -1242,7 +1242,7 @@
       <div class="eyebrow">Investment &amp; timeline</div>
       <table>
         <tbody>
-          <tr><td class="stage">Discovery</td><td class="desc">We map your workflow and come back with a fixed quote.</td><td class="time">2&ndash;4 weeks</td><td class="price">&mdash;</td></tr>
+          <tr><td class="stage">Discovery</td><td class="desc">We map your workflow and come back with a fixed quote.</td><td class="time">2&ndash;4 weeks</td><td class="price">&#8362;15&ndash;25k</td></tr>
           <tr><td class="stage">Build</td><td class="desc">Design, build, connect, train. One-time.</td><td class="time">30 days</td><td class="price">From &#8362;30k</td></tr>
           <tr><td class="stage">Stabilize</td><td class="desc">We stay close and fix against real use.</td><td class="time">2&ndash;4 weeks</td><td class="price">From &#8362;10k</td></tr>
           <tr><td class="stage">Run &mdash; subscriptions</td><td class="desc">Platform, WhatsApp, email, infrastructure. Fixed every month.</td><td class="time">Ongoing</td><td class="price">From &#8362;75/mo</td></tr>
