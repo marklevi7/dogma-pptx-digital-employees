@@ -311,7 +311,17 @@
     ol.steps { grid-template-columns: 1fr; gap: clamp(14px, 2vw, 18px); }
     ol.steps::before { display: none; }
     ol.steps li { display: grid; grid-template-columns: 36px 1fr; column-gap: 16px; row-gap: 2px; }
-    ol.steps .num { margin-bottom: 0; grid-row: span 2; align-self: start; }
+    ol.steps li:not(:last-child)::before {
+      content: '';
+      position: absolute;
+      left: 15px;
+      width: 2px;
+      top: 16px;
+      bottom: calc(-1 * (clamp(14px, 2vw, 18px) + 16px));
+      background: var(--line-2);
+      z-index: 0;
+    }
+    ol.steps .num { margin-bottom: 0; grid-row: span 2; align-self: start; position: relative; z-index: 1; }
     ol.steps .name { grid-column: 2; }
     ol.steps .desc { grid-column: 2; }
   }
@@ -810,7 +820,7 @@
     <div class="slide-inner center stack">
       <img class="mlc-mark" src="assets/mldi-logo.svg" alt="MLDI">
       <h1>AI Employees</h1>
-      <div class="tag">Internal master deck &middot; v53</div>
+      <div class="tag">Internal master deck &middot; v54</div>
     </div>
   </section>
 
