@@ -235,6 +235,7 @@
     margin-top: clamp(20px, 2.6vw, 32px);
     flex-wrap: wrap;
   }
+  .center .platforms { justify-content: center; }
   .platform {
     display: flex; align-items: center; gap: 12px;
     color: var(--text);
@@ -893,7 +894,7 @@
     <div class="slide-inner center stack">
       <img class="mlc-mark" src="assets/mldi-logo.svg" alt="MLDI">
       <h1>AI Employees</h1>
-      <div class="tag">Internal master deck &middot; v64</div>
+      <div class="tag">Internal master deck &middot; v65</div>
     </div>
   </section>
 
@@ -957,11 +958,12 @@
     </div>
   </section>
 
-  <!-- 4b — Lives inside your tools -->
-  <section class="slide" data-slide>
-    <div class="slide-inner stack">
+  <!-- 4b — Works with your tools -->
+  <section class="slide meet" data-slide>
+    <div class="slide-inner center stack">
+      <div class="face-avatar"><svg aria-hidden="true"><use href="#face-bot"/></svg></div>
       <div class="eyebrow">What an AI Employee is</div>
-      <h2>It lives inside the tools you already use.</h2>
+      <h2>It works with the tools you already use.</h2>
       <div class="platforms">
         <div class="platform"><svg class="ic-md"><use href="#ic-whatsapp"/></svg><span>WhatsApp</span></div>
         <div class="platform"><svg class="ic-md"><use href="#ic-email"/></svg><span>Email</span></div>
