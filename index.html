@@ -345,9 +345,10 @@
   table tr:last-child td { border-bottom: 1px solid var(--line); }
   td.k { color: var(--muted); width: 38%; padding-left: 0; }
   td.v { color: var(--text); font-variant-numeric: tabular-nums; }
-  td.stage { color: var(--text); font-weight: 600; width: 26%; padding-left: 0; }
+  td.stage { color: var(--text); font-weight: 600; width: 20%; padding-left: 0; }
   td.desc { color: var(--muted); }
-  td.price { color: var(--text); font-variant-numeric: tabular-nums; text-align: right; padding-right: 0; white-space: nowrap; width: 22%; }
+  td.time { color: var(--soft); white-space: nowrap; width: 16%; font-variant-numeric: tabular-nums; }
+  td.price { color: var(--text); font-variant-numeric: tabular-nums; text-align: right; padding-right: 0; white-space: nowrap; width: 18%; }
   .placeholder { color: var(--dim); }
 
   @media (max-width: 640px) {
@@ -419,31 +420,42 @@
   .deploy {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: clamp(14px, 1.8vw, 22px);
-    margin-top: clamp(10px, 1.4vw, 18px);
+    gap: clamp(10px, 1.2vw, 16px);
+    margin-top: clamp(10px, 1.2vw, 16px);
   }
   .deploy-item {
-    padding: clamp(12px, 1.3vw, 18px) clamp(10px, 1.2vw, 16px);
+    display: flex;
+    align-items: center;
+    gap: clamp(10px, 1.2vw, 16px);
+    padding: clamp(10px, 1.1vw, 14px) clamp(12px, 1.3vw, 18px);
     border: 1px solid var(--line);
     border-radius: clamp(8px, 0.8vw, 12px);
-    text-align: center;
   }
   .ic-deploy {
-    width: clamp(22px, 2.2vw, 30px);
-    height: clamp(22px, 2.2vw, 30px);
+    width: clamp(20px, 1.9vw, 26px);
+    height: clamp(20px, 1.9vw, 26px);
     color: var(--text);
     display: block;
-    margin: 0 auto clamp(6px, 0.7vw, 10px);
+    flex-shrink: 0;
   }
   .deploy-label {
     color: var(--text);
     font-weight: 700;
     font-size: clamp(11px, 1vw, 13px);
-    letter-spacing: 0.14em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
   }
+  .section-label {
+    color: var(--muted);
+    font-size: clamp(11px, 1vw, 13px);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: clamp(20px, 2.4vw, 32px);
+    margin-bottom: clamp(10px, 1.2vw, 16px);
+  }
   @media (max-width: 720px) {
-    .deploy { grid-template-columns: 1fr; gap: 12px; }
+    .deploy { grid-template-columns: 1fr; gap: 10px; }
   }
 
   /* COST NOTES (three-column clarifier) */
@@ -569,8 +581,8 @@
     /* Cost-table rows stack the description below the stage+price on phones */
     .slide.wide tr:has(td.stage) {
       display: grid;
-      grid-template-columns: 1fr auto;
-      column-gap: 14px;
+      grid-template-columns: 1fr auto auto;
+      column-gap: 10px;
       row-gap: 4px;
       padding: 14px 0;
       border-top: 1px solid var(--line);
@@ -578,7 +590,8 @@
     .slide.wide tr:has(td.stage):first-child { border-top: 0; }
     .slide.wide tr:has(td.stage) td { padding: 0; border: 0; width: auto; }
     .slide.wide td.stage { grid-column: 1; grid-row: 1; font-size: 16px; }
-    .slide.wide td.price { grid-column: 2; grid-row: 1; font-size: 15px; }
+    .slide.wide td.time  { grid-column: 2; grid-row: 1; font-size: 13px; }
+    .slide.wide td.price { grid-column: 3; grid-row: 1; font-size: 15px; }
     .slide.wide td.desc  { grid-column: 1 / -1; grid-row: 2; font-size: 13px; line-height: 1.45; color: var(--muted); }
 
     /* Closing CTA: a little less air to keep it on one screen */
@@ -863,7 +876,7 @@
     <div class="slide-inner center stack">
       <img class="mlc-mark" src="assets/mldi-logo.svg" alt="MLDI">
       <h1>AI Employees</h1>
-      <div class="tag">Internal master deck &middot; v57</div>
+      <div class="tag">Internal master deck &middot; v58</div>
     </div>
   </section>
 
@@ -1185,8 +1198,9 @@
   <!-- Security & compliance -->
   <section class="slide wide" data-slide>
     <div class="slide-inner stack">
-      <div class="eyebrow">Security &amp; compliance</div>
-      <h2>Compliant by default.<br>Deployable your way.</h2>
+      <div class="eyebrow">Compliance &amp; Deployment</div>
+      <h2>Frameworks your auditors trust.<br>Deployment your IT signs off on.</h2>
+      <div class="section-label">Compliance</div>
       <div class="badges">
         <div class="badge">SOC&nbsp;2 Type&nbsp;II</div>
         <div class="badge">GDPR</div>
@@ -1197,6 +1211,7 @@
         <div class="badge">HIPAA</div>
         <div class="badge">PCI&#8209;DSS</div>
       </div>
+      <div class="section-label">Deployment</div>
       <div class="deploy">
         <div class="deploy-item">
           <svg class="ic-deploy" aria-hidden="true"><use href="#ic-cloud"/></svg>
@@ -1220,10 +1235,11 @@
       <div class="eyebrow">Costs</div>
       <table>
         <tbody>
-          <tr><td class="stage">Build</td><td class="desc">Design, build, connect, train. One-time.</td><td class="price">From &#8362;30k</td></tr>
-          <tr><td class="stage">Stabilize</td><td class="desc">30 days live. We stay close and fix against real use.</td><td class="price">From &#8362;10k</td></tr>
-          <tr><td class="stage">Run &mdash; subscriptions</td><td class="desc">Platform, WhatsApp, email, infrastructure. Fixed every month.</td><td class="price">From &#8362;75/mo</td></tr>
-          <tr><td class="stage">Run &mdash; AI usage</td><td class="desc">What the AI burns as it works. You use more, you pay more.</td><td class="price">&#8362;60+/mo</td></tr>
+          <tr><td class="stage">Discovery</td><td class="desc">We map your workflow and come back with a fixed quote.</td><td class="time">30 days</td><td class="price">&mdash;</td></tr>
+          <tr><td class="stage">Build</td><td class="desc">Design, build, connect, train. One-time.</td><td class="time">30 days</td><td class="price">From &#8362;30k</td></tr>
+          <tr><td class="stage">Stabilize</td><td class="desc">We stay close and fix against real use.</td><td class="time">2&ndash;4 weeks</td><td class="price">From &#8362;10k</td></tr>
+          <tr><td class="stage">Run &mdash; subscriptions</td><td class="desc">Platform, WhatsApp, email, infrastructure. Fixed every month.</td><td class="time">Ongoing</td><td class="price">From &#8362;75/mo</td></tr>
+          <tr><td class="stage">Run &mdash; AI usage</td><td class="desc">What the AI burns as it works. You use more, you pay more.</td><td class="time">Ongoing</td><td class="price">&#8362;60+/mo</td></tr>
         </tbody>
       </table>
     </div>
