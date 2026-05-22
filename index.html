@@ -46,8 +46,8 @@
     align-items: center;
     padding: clamp(28px, 6vw, 96px);
   }
-  .slide-inner { width: 100%; max-width: 1100px; }
-  .wide .slide-inner { max-width: 1280px; }
+  .slide-inner { width: 100%; max-width: 1200px; margin-left: auto; margin-right: auto; }
+  .wide .slide-inner { max-width: 1200px; }
 
   /* TYPOGRAPHY */
   .eyebrow {
@@ -83,6 +83,7 @@
   }
   p + p { margin-top: clamp(14px, 1.6vw, 22px); }
   .lead { font-size: clamp(20px, 2.6vw, 34px); color: var(--text); line-height: 1.35; max-width: 28ch; font-weight: 400; }
+  .center .lead, .center p { margin-left: auto; margin-right: auto; }
   .body { color: var(--muted); }
   .dim { color: var(--dim); }
   .soft { color: var(--soft); }
@@ -186,7 +187,7 @@
   .hg-anim {
     width: clamp(56px, 6vw, 92px);
     height: auto;
-    aspect-ratio: 24 / 30;
+    aspect-ratio: 32 / 48;
     color: var(--soft);
     display: block;
   }
@@ -780,7 +781,7 @@
       <img class="mlc-mark" src="assets/mldi-logo.svg" alt="MLDI">
       <div class="brand">MLDI</div>
       <h1>AI Employees</h1>
-      <div class="tag">Internal master deck &middot; v33</div>
+      <div class="tag">Internal master deck &middot; v34</div>
     </div>
   </section>
 
@@ -1076,7 +1077,7 @@
     <div class="slide-inner stack">
       <div class="eyebrow">How we build it</div>
       <ol class="steps">
-        <li><div class="num">1</div><div class="name">Discovery &amp; quote</div><div class="desc">Short call. We map the work, give a fixed price.</div></li>
+        <li><div class="num">1</div><div class="name">Discovery &amp; quote</div><div class="desc">2&ndash;3 weeks. &#8362;15&ndash;25k. Deep workflow audit, then a fixed build quote.</div></li>
         <li><div class="num">2</div><div class="name">Build</div><div class="desc">2&ndash;4 weeks. We build, connect, train it on your data.</div></li>
         <li><div class="num">3</div><div class="name">Stabilize</div><div class="desc">Goes live. We stay close 30 days, fix against real use.</div></li>
         <li><div class="num">4</div><div class="name">Run</div><div class="desc">You use it like any team member. We step back.</div></li>
@@ -1089,7 +1090,7 @@
   <section class="slide wide" data-slide>
     <div class="slide-inner stack">
       <div class="eyebrow">Security &amp; compliance</div>
-      <h2>Compliant by default. Deployable your way.</h2>
+      <h2>Compliant by default.<br>Deployable your way.</h2>
       <div class="badges">
         <div class="badge">SOC&nbsp;2 Type&nbsp;II</div>
         <div class="badge">GDPR</div>
@@ -1123,7 +1124,7 @@
       <div class="eyebrow">Costs</div>
       <table>
         <tbody>
-          <tr><td class="stage">Discovery</td><td class="desc">We map your workflow and come back with a fixed quote.</td><td class="price"><span class="placeholder">[PLACEHOLDER &#8362;]</span></td></tr>
+          <tr><td class="stage">Discovery</td><td class="desc">2&ndash;3 weeks of deep workflow audit. The biggest single chunk up front &mdash; we come back with a fixed build quote.</td><td class="price">&#8362;15&ndash;25k</td></tr>
           <tr><td class="stage">Build</td><td class="desc">Design, build, connect, train. One-time.</td><td class="price"><span class="placeholder">[PLACEHOLDER &#8362;]</span></td></tr>
           <tr><td class="stage">Stabilize</td><td class="desc">30 days live, we stay close and fix against real use.</td><td class="price"><span class="placeholder">[PLACEHOLDER &#8362;]</span></td></tr>
           <tr><td class="stage">Running &mdash; systems</td><td class="desc">Platform, WhatsApp, email, infrastructure. Fixed every month, for years.</td><td class="price"><span class="placeholder">[PLACEHOLDER &#8362;/mo]</span></td></tr>
@@ -1151,20 +1152,32 @@
   <section class="slide" data-slide>
     <div class="slide-inner stack">
       <div class="eyebrow">Why now</div>
-      <svg class="hg-anim" viewBox="0 0 24 30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <svg class="hg-anim" viewBox="0 0 32 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <defs>
+          <clipPath id="hg-top-clip"><polygon points="7,4 25,4 16.5,23.5 15.5,23.5"/></clipPath>
+          <clipPath id="hg-bot-clip"><polygon points="7,44 25,44 16.5,24.5 15.5,24.5"/></clipPath>
+        </defs>
         <g>
-          <line x1="6" y1="3" x2="18" y2="3"/>
-          <line x1="6" y1="27" x2="18" y2="27"/>
-          <path d="M 6 3 L 6 7 L 11 14 L 11 16 L 6 23 L 6 27"/>
-          <path d="M 18 3 L 18 7 L 13 14 L 13 16 L 18 23 L 18 27"/>
-          <path d="M 7 7 L 17 7 L 12 13 Z" fill="currentColor" stroke="none"/>
+          <line x1="6" y1="4" x2="26" y2="4"/>
+          <line x1="6" y1="44" x2="26" y2="44"/>
+          <path d="M 7 4 L 25 4 L 16 23.8 L 7 4 Z"/>
+          <path d="M 7 44 L 25 44 L 16 24.2 L 7 44 Z"/>
+          <rect x="7" y="4" width="18" height="20" fill="currentColor" stroke="none" clip-path="url(#hg-top-clip)">
+            <animate attributeName="y" values="4;22;22;4;4" keyTimes="0;0.45;0.55;0.95;1" dur="5s" repeatCount="indefinite"/>
+          </rect>
+          <rect x="7" y="44" width="18" height="0" fill="currentColor" stroke="none" clip-path="url(#hg-bot-clip)">
+            <animate attributeName="y" values="44;25;25;44;44" keyTimes="0;0.45;0.55;0.95;1" dur="5s" repeatCount="indefinite"/>
+            <animate attributeName="height" values="0;19;19;0;0" keyTimes="0;0.45;0.55;0.95;1" dur="5s" repeatCount="indefinite"/>
+          </rect>
+          <line x1="16" y1="23.5" x2="16" y2="25" stroke-width="0.8">
+            <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.44;0.5;0.95;1" dur="5s" repeatCount="indefinite"/>
+          </line>
           <animateTransform attributeName="transform" type="rotate"
-            dur="5s"
-            repeatCount="indefinite"
+            dur="5s" repeatCount="indefinite"
             calcMode="spline"
             keySplines="0 0 0 0; 0.65 0 0.35 1; 0 0 0 0; 0.65 0 0.35 1"
-            keyTimes="0; 0.4; 0.5; 0.9; 1"
-            values="0 12 15; 0 12 15; 180 12 15; 180 12 15; 360 12 15"/>
+            keyTimes="0; 0.45; 0.55; 0.95; 1"
+            values="0 16 24; 0 16 24; 180 16 24; 180 16 24; 360 16 24"/>
         </g>
       </svg>
       <h2>Your competitors are already doing this.</h2>
