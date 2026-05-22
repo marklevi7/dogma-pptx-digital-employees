@@ -715,6 +715,25 @@
       </g>
     </symbol>
 
+    <!-- GENERIC BOT — for "What an AI Employee is" -->
+    <symbol id="face-bot" viewBox="0 0 120 140">
+      <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="60" y1="10" x2="60" y2="22"/>
+        <circle cx="60" cy="60" r="38"/>
+        <line x1="22" y1="60" x2="14" y2="60"/>
+        <line x1="98" y1="60" x2="106" y2="60"/>
+        <line x1="50" y1="74" x2="70" y2="74"/>
+        <line x1="48" y1="100" x2="48" y2="116"/>
+        <line x1="72" y1="100" x2="72" y2="116"/>
+        <path d="M 28 130 Q 60 118 92 130"/>
+      </g>
+      <g fill="currentColor" stroke="none">
+        <circle cx="60" cy="8" r="3.5"/>
+        <circle cx="48" cy="56" r="4.5"/>
+        <circle cx="72" cy="56" r="4.5"/>
+      </g>
+    </symbol>
+
     <!-- MLC MONOGRAM — MLDI -->
     <symbol id="mlc-logo" viewBox="0 0 60 22">
       <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
@@ -844,7 +863,7 @@
     <div class="slide-inner center stack">
       <img class="mlc-mark" src="assets/mldi-logo.svg" alt="MLDI">
       <h1>AI Employees</h1>
-      <div class="tag">Internal master deck &middot; v55</div>
+      <div class="tag">Internal master deck &middot; v56</div>
     </div>
   </section>
 
@@ -898,13 +917,21 @@
     </div>
   </section>
 
-  <!-- 4 — What an AI Employee is -->
+  <!-- 4 — What an AI Employee is (definition + generic bot) -->
+  <section class="slide meet" data-slide>
+    <div class="slide-inner center stack">
+      <svg class="face-lg"><use href="#face-bot"/></svg>
+      <div class="eyebrow">What an AI Employee is</div>
+      <h2>A digital worker that does one human job, start to finish, on its own.</h2>
+      <p class="lead">You don&rsquo;t manage it. You talk to it.</p>
+    </div>
+  </section>
+
+  <!-- 4b — Lives inside your tools -->
   <section class="slide" data-slide>
     <div class="slide-inner stack">
       <div class="eyebrow">What an AI Employee is</div>
-      <h2>A digital worker that does one human job, start to finish, on its own.</h2>
-      <p class="body">It lives inside the tools you already use.</p>
-      <p class="body">You don&rsquo;t manage it. You talk to it.</p>
+      <h2>It lives inside the tools you already use.</h2>
       <div class="platforms">
         <div class="platform"><svg class="ic-md"><use href="#ic-whatsapp"/></svg><span>WhatsApp</span></div>
         <div class="platform"><svg class="ic-md"><use href="#ic-email"/></svg><span>Email</span></div>
