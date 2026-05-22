@@ -423,9 +423,17 @@
     margin-top: clamp(10px, 1.4vw, 18px);
   }
   .deploy-item {
-    padding: clamp(14px, 1.6vw, 20px);
+    padding: clamp(20px, 2.2vw, 28px) clamp(14px, 1.6vw, 20px);
     border: 1px solid var(--line);
     border-radius: clamp(10px, 1vw, 14px);
+    text-align: center;
+  }
+  .ic-deploy {
+    width: clamp(36px, 4vw, 56px);
+    height: clamp(36px, 4vw, 56px);
+    color: var(--text);
+    display: block;
+    margin: 0 auto clamp(10px, 1.2vw, 16px);
   }
   .deploy-label {
     color: var(--text);
@@ -433,12 +441,6 @@
     font-size: clamp(12px, 1.15vw, 15px);
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    margin-bottom: clamp(6px, 0.8vw, 10px);
-  }
-  .deploy-text {
-    color: var(--muted);
-    font-size: clamp(13px, 1.3vw, 17px);
-    line-height: 1.45;
   }
   @media (max-width: 720px) {
     .deploy { grid-template-columns: 1fr; gap: 12px; }
@@ -796,6 +798,28 @@
         <line x1="12" y1="3" x2="12" y2="19"/>
       </g>
     </symbol>
+    <symbol id="ic-cloud" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M 7 18 C 4 18 2 16 2 13.5 C 2 11.5 4 10 6 10 C 6 7 8.5 5 11.5 5 C 14 5 16 6.5 17 9 C 19.5 9 22 10.5 22 13.5 C 22 16 20 18 17.5 18 Z"/>
+      </g>
+    </symbol>
+    <symbol id="ic-cloud-lock" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M 7 14 C 4 14 2 12 2 9.5 C 2 7.5 4 6 6 6 C 6 3.5 8.5 2 11.5 2 C 14 2 16 3.5 17 5.5 C 19.5 5.5 22 7 22 10 C 22 12 20.5 13.5 18.5 14"/>
+        <rect x="9" y="14" width="8" height="7" rx="1"/>
+        <path d="M 11 14 V 12.5 C 11 11.4 11.9 10.5 13 10.5 C 14.1 10.5 15 11.4 15 12.5 V 14"/>
+      </g>
+    </symbol>
+    <symbol id="ic-server" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4" y="3" width="16" height="7" rx="1"/>
+        <rect x="4" y="14" width="16" height="7" rx="1"/>
+        <line x1="8" y1="6.5" x2="14" y2="6.5"/>
+        <line x1="8" y1="17.5" x2="14" y2="17.5"/>
+      </g>
+      <circle cx="17" cy="6.5" r="0.8" fill="currentColor"/>
+      <circle cx="17" cy="17.5" r="0.8" fill="currentColor"/>
+    </symbol>
     <symbol id="ic-pin" viewBox="0 0 24 24">
       <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M 12 21 C 7 15 5 12 5 9 A 7 7 0 0 1 19 9 C 19 12 17 15 12 21 Z"/>
@@ -820,7 +844,7 @@
     <div class="slide-inner center stack">
       <img class="mlc-mark" src="assets/mldi-logo.svg" alt="MLDI">
       <h1>AI Employees</h1>
-      <div class="tag">Internal master deck &middot; v54</div>
+      <div class="tag">Internal master deck &middot; v55</div>
     </div>
   </section>
 
@@ -1122,7 +1146,7 @@
     <div class="slide-inner stack">
       <div class="eyebrow">How we build it</div>
       <ol class="steps">
-        <li><div class="num">1</div><div class="name">Discovery &amp; quote</div><div class="desc">2&ndash;3 weeks. &#8362;15&ndash;25k. Deep workflow audit, then a fixed build quote.</div></li>
+        <li><div class="num">1</div><div class="name">Discovery &amp; quote</div><div class="desc">2&ndash;3 weeks of deep workflow audit, then a fixed build quote.</div></li>
         <li><div class="num">2</div><div class="name">Build</div><div class="desc">2&ndash;4 weeks. We build, connect, train it on your data.</div></li>
         <li><div class="num">3</div><div class="name">Stabilize</div><div class="desc">Goes live. We stay close 30 days, fix against real use.</div></li>
         <li><div class="num">4</div><div class="name">Run</div><div class="desc">You use it like any team member. We step back.</div></li>
@@ -1148,16 +1172,16 @@
       </div>
       <div class="deploy">
         <div class="deploy-item">
+          <svg class="ic-deploy" aria-hidden="true"><use href="#ic-cloud"/></svg>
           <div class="deploy-label">Public Cloud</div>
-          <div class="deploy-text">Scalable. Encrypted in transit and at rest. Hypervisor isolation under a shared-responsibility model.</div>
         </div>
         <div class="deploy-item">
+          <svg class="ic-deploy" aria-hidden="true"><use href="#ic-cloud-lock"/></svg>
           <div class="deploy-label">Private Cloud</div>
-          <div class="deploy-text">Dedicated, single-tenant infrastructure. Stricter network controls and custom governance.</div>
         </div>
         <div class="deploy-item">
+          <svg class="ic-deploy" aria-hidden="true"><use href="#ic-server"/></svg>
           <div class="deploy-label">On-Premises</div>
-          <div class="deploy-text">Total physical control. Hardened data centres, air-gapped systems, absolute data sovereignty.</div>
         </div>
       </div>
     </div>
@@ -1169,27 +1193,12 @@
       <div class="eyebrow">Costs</div>
       <table>
         <tbody>
-          <tr><td class="stage">Discovery</td><td class="desc">2&ndash;3 weeks of deep workflow audit. The biggest single chunk up front &mdash; we come back with a fixed build quote.</td><td class="price">&#8362;15&ndash;25k</td></tr>
-          <tr><td class="stage">Build</td><td class="desc">Design, build, connect, train. One-time.</td><td class="price"><span class="placeholder">[PLACEHOLDER &#8362;]</span></td></tr>
-          <tr><td class="stage">Stabilize</td><td class="desc">30 days live, we stay close and fix against real use.</td><td class="price"><span class="placeholder">[PLACEHOLDER &#8362;]</span></td></tr>
-          <tr><td class="stage">Running &mdash; systems</td><td class="desc">Platform, WhatsApp, email, infrastructure. Fixed every month, for years.</td><td class="price"><span class="placeholder">[PLACEHOLDER &#8362;/mo]</span></td></tr>
-          <tr><td class="stage">Running &mdash; tokens</td><td class="desc">What the AI burns as it works. You use more, you pay more.</td><td class="price"><span class="placeholder">[PLACEHOLDER &#8362;/mo]</span></td></tr>
+          <tr><td class="stage">Build</td><td class="desc">Design, build, connect, train. One-time.</td><td class="price">From &#8362;30k</td></tr>
+          <tr><td class="stage">Stabilize</td><td class="desc">30 days live. We stay close and fix against real use.</td><td class="price">From &#8362;10k</td></tr>
+          <tr><td class="stage">Run &mdash; subscriptions</td><td class="desc">Platform, WhatsApp, email, infrastructure. Fixed every month.</td><td class="price">From &#8362;75/mo</td></tr>
+          <tr><td class="stage">Run &mdash; AI usage</td><td class="desc">What the AI burns as it works. You use more, you pay more.</td><td class="price">&#8362;60+/mo</td></tr>
         </tbody>
       </table>
-      <div class="cost-notes">
-        <div>
-          <div class="cn-label">Pay once</div>
-          <div class="cn-text">Discovery and Build are one-time. You never see them again.</div>
-        </div>
-        <div>
-          <div class="cn-label">Fixed monthly</div>
-          <div class="cn-text">Systems is a locked monthly rate. It won&rsquo;t grow.</div>
-        </div>
-        <div>
-          <div class="cn-label">You control</div>
-          <div class="cn-text">Tokens scale with use. You decide how much it runs.</div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -1226,7 +1235,7 @@
         </g>
       </svg>
       <h2>Your competitors are already doing this.</h2>
-      <p>Right now, companies your size and much bigger are putting AI Employees to work. Every month you wait, they get further ahead. The time to start is now.</p>
+      <p>Right now, companies just like yours are putting AI Employees to work. Every month you wait, they get further ahead. The time to start is now.</p>
     </div>
   </section>
 
@@ -1234,7 +1243,7 @@
   <section class="slide close" data-slide>
     <div class="slide-inner center stack">
       <h2>Your first AI Employee can be live in 30 days.</h2>
-      <p class="lead">Call me.</p>
+      <p class="lead">Call us.</p>
       <div>
         <a class="cta-phone" href="tel:+972528834558" aria-label="Call Mark Levi at +972 52 883 4558">
           <svg aria-hidden="true"><use href="#ic-phone"/></svg>
