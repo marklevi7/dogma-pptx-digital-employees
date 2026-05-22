@@ -154,6 +154,23 @@
     display: block;
     flex-shrink: 0;
   }
+  .face-avatar {
+    width: clamp(110px, 12vw, 160px);
+    height: clamp(110px, 12vw, 160px);
+    border: 2px solid var(--line-2);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto clamp(18px, 2.2vw, 32px);
+  }
+  .face-avatar svg {
+    width: 60%;
+    height: 70%;
+    color: var(--soft);
+    display: block;
+  }
   .mlc-mark {
     width: clamp(120px, 12vw, 180px);
     height: auto;
@@ -876,7 +893,7 @@
     <div class="slide-inner center stack">
       <img class="mlc-mark" src="assets/mldi-logo.svg" alt="MLDI">
       <h1>AI Employees</h1>
-      <div class="tag">Internal master deck &middot; v63</div>
+      <div class="tag">Internal master deck &middot; v64</div>
     </div>
   </section>
 
@@ -933,7 +950,7 @@
   <!-- 4 — What an AI Employee is (definition + generic bot) -->
   <section class="slide meet" data-slide>
     <div class="slide-inner center stack">
-      <svg class="face-lg"><use href="#face-bot"/></svg>
+      <div class="face-avatar"><svg aria-hidden="true"><use href="#face-bot"/></svg></div>
       <div class="eyebrow">What an AI Employee is</div>
       <h2>A digital worker that does one human job, start to finish, on its own.</h2>
       <p class="lead">You don&rsquo;t manage it. You talk to it.</p>
