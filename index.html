@@ -90,31 +90,38 @@
   .center { text-align: center; }
   .stack > * + * { margin-top: clamp(16px, 2vw, 28px); }
 
-  /* COVER */
-  .cover::before, .cover::after {
-    content: '';
+  /* AURORA GLOW */
+  .aurora-bottom, .aurora-top {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    left: 0; right: 0;
     height: 55%;
     pointer-events: none;
     z-index: 0;
   }
-  .cover::before {
+  .aurora-bottom {
+    bottom: 0;
     background:
       radial-gradient(ellipse 35% 70% at 25% 100%, rgba(0, 220, 130, 0.7) 0%, transparent 70%),
       radial-gradient(ellipse 30% 80% at 50% 100%, rgba(20, 80, 200, 0.75) 0%, transparent 65%),
-      radial-gradient(ellipse 35% 70% at 78% 100%, rgba(30, 150, 240, 0.65) 0%, transparent 70%);
-    filter: blur(50px);
-  }
-  .cover::after {
-    background:
+      radial-gradient(ellipse 35% 70% at 78% 100%, rgba(30, 150, 240, 0.65) 0%, transparent 70%),
       radial-gradient(ellipse 20% 50% at 18% 100%, rgba(0, 240, 140, 0.4) 0%, transparent 60%),
       radial-gradient(ellipse 15% 60% at 48% 100%, rgba(30, 100, 220, 0.5) 0%, transparent 55%),
       radial-gradient(ellipse 18% 45% at 72% 100%, rgba(40, 170, 255, 0.4) 0%, transparent 55%);
-    filter: blur(32px);
+    filter: blur(40px);
   }
+  .aurora-top {
+    top: 0;
+    transform: scaleY(-1);
+    background:
+      radial-gradient(ellipse 35% 70% at 25% 100%, rgba(0, 220, 130, 0.7) 0%, transparent 70%),
+      radial-gradient(ellipse 30% 80% at 50% 100%, rgba(20, 80, 200, 0.75) 0%, transparent 65%),
+      radial-gradient(ellipse 35% 70% at 78% 100%, rgba(30, 150, 240, 0.65) 0%, transparent 70%),
+      radial-gradient(ellipse 20% 50% at 18% 100%, rgba(0, 240, 140, 0.4) 0%, transparent 60%),
+      radial-gradient(ellipse 15% 60% at 48% 100%, rgba(30, 100, 220, 0.5) 0%, transparent 55%),
+      radial-gradient(ellipse 18% 45% at 72% 100%, rgba(40, 170, 255, 0.4) 0%, transparent 55%);
+    filter: blur(40px);
+  }
+  .aurora-dim { opacity: 0.5; }
   .cover .brand {
     color: var(--soft);
     font-size: clamp(22px, 2.6vw, 36px);
@@ -962,10 +969,11 @@
 
   <!-- 0 — Cover -->
   <section class="slide cover" data-slide>
+    <div class="aurora-bottom" aria-hidden="true"></div>
     <div class="slide-inner center stack">
       <img class="mlc-mark" src="assets/mldi-logo.svg" alt="MLDI">
       <h1>Free your team from the repetitive work they&rsquo;re stuck on.</h1>
-      <div class="tag">Internal master deck &middot; v105</div>
+      <div class="tag">Internal master deck &middot; v106</div>
     </div>
   </section>
 
@@ -1033,6 +1041,7 @@
 
   <!-- 6 — Meet Maya -->
   <section class="slide meet" data-slide>
+    <div class="aurora-bottom" aria-hidden="true"></div>
     <div class="slide-inner center stack">
       <svg class="face-lg"><use href="#face-maya"/></svg>
       <div class="eyebrow">Digital Employee</div>
@@ -1212,6 +1221,8 @@
 
   <!-- 19 — How we build it -->
   <section class="slide wide" data-slide>
+    <div class="aurora-top aurora-dim" aria-hidden="true"></div>
+    <div class="aurora-bottom aurora-dim" aria-hidden="true"></div>
     <div class="slide-inner stack">
       <div class="eyebrow">How we build it</div>
       <ol class="steps">
@@ -1312,6 +1323,7 @@
 
   <!-- 23 — Close -->
   <section class="slide close" data-slide>
+    <div class="aurora-bottom" aria-hidden="true"></div>
     <div class="slide-inner center stack">
       <h2>Let&rsquo;s build your first one.</h2>
       <p class="lead">Your first Digital Employee can be live in&nbsp;30&nbsp;days.</p>
