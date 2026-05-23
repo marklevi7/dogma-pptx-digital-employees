@@ -693,15 +693,14 @@
     .meet h1 { font-size: clamp(64px, 17vw, 110px); }
     .meet .role { font-size: clamp(17px, 4.4vw, 24px); }
 
-    /* Family row becomes a 2x2 grid */
+    /* Family row stays single line on mobile */
     .family {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(22px, 5vw, 32px) clamp(28px, 7vw, 44px);
-      justify-items: center;
+      display: flex;
+      gap: clamp(18px, 5vw, 32px);
+      justify-content: center;
       align-items: end;
     }
-    .face-sm { width: clamp(86px, 22vw, 120px); }
+    .face-sm { width: clamp(56px, 16vw, 86px); }
 
     /* Eyebrow + mini-head row sits tighter */
     .eyebrow-row { gap: 10px; }
@@ -1042,7 +1041,7 @@
     <div class="slide-inner center stack">
       <img class="mlc-mark" src="assets/mldi-logo.svg" alt="MLDI">
       <h1>Free your team from the repetitive work they&rsquo;re stuck on.</h1>
-      <div class="tag">Internal master deck &middot; v117</div>
+      <div class="tag">Internal master deck &middot; v118</div>
     </div>
   </section>
 
