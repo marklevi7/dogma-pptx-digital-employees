@@ -105,7 +105,7 @@
     left: 0;
     right: 0;
     width: 100%;
-    height: 33%;
+    height: 25%;
     pointer-events: none;
     z-index: 0;
     color: var(--text);
@@ -2058,6 +2058,22 @@
 <circle cx="83.25" cy="26.25" r="0.550"/>
 </symbol>
 
+    <!-- pattern-3: dense uniform dots, fading via gradient mask (compact, scalable) -->
+    <symbol id="halftone-3" viewBox="0 0 120 30">
+      <defs>
+        <linearGradient id="ht3-grad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="black"/>
+          <stop offset="40%" stop-color="black"/>
+          <stop offset="100%" stop-color="white"/>
+        </linearGradient>
+        <mask id="ht3-mask"><rect width="120" height="30" fill="url(#ht3-grad)"/></mask>
+        <pattern id="ht3-dots" width="0.7" height="0.7" patternUnits="userSpaceOnUse">
+          <circle cx="0.35" cy="0.35" r="0.13" fill="white"/>
+        </pattern>
+      </defs>
+      <rect width="120" height="30" fill="url(#ht3-dots)" mask="url(#ht3-mask)"/>
+    </symbol>
+
     <!-- MLC MONOGRAM — MLDI -->
     <symbol id="mlc-logo" viewBox="0 0 60 22">
       <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
@@ -2184,11 +2200,11 @@
 
   <!-- 0 — Cover -->
   <section class="slide cover" data-slide>
-    <svg class="bg-halftone bottom" viewBox="0 0 84 27" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><use href="#halftone-2"/></svg>
+    <svg class="bg-halftone bottom" viewBox="0 0 120 30" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><use href="#halftone-3"/></svg>
     <div class="slide-inner center stack">
       <img class="mlc-mark" src="assets/mldi-logo.svg" alt="MLDI">
       <h1>AI Employees</h1>
-      <div class="tag">Internal master deck &middot; v72</div>
+      <div class="tag">Internal master deck &middot; v73</div>
     </div>
   </section>
 
