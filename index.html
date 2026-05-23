@@ -94,12 +94,16 @@
   .cover::before {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -20%;
     left: 50%;
     transform: translateX(-50%);
-    width: 140%;
+    width: 90%;
     height: 70%;
-    background: radial-gradient(ellipse at 50% 100%, rgba(245, 242, 239, 0.06) 0%, rgba(245, 242, 239, 0.025) 30%, transparent 70%);
+    border-radius: 45% 42% 48% 40%;
+    background: radial-gradient(ellipse at 40% 80%, rgba(255,255,255,0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 65% 70%, rgba(200,200,210,0.08) 0%, transparent 45%),
+                radial-gradient(ellipse at 30% 60%, rgba(220,215,225,0.06) 0%, transparent 40%);
+    filter: blur(60px);
     pointer-events: none;
     z-index: 0;
   }
@@ -953,7 +957,7 @@
     <div class="slide-inner center stack">
       <img class="mlc-mark" src="assets/mldi-logo.svg" alt="MLDI">
       <h1>Free your team from the repetitive work they&rsquo;re stuck on.</h1>
-      <div class="tag">Internal master deck &middot; v101</div>
+      <div class="tag">Internal master deck &middot; v102</div>
     </div>
   </section>
 
