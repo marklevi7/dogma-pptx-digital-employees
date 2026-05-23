@@ -91,6 +91,18 @@
   .stack > * + * { margin-top: clamp(16px, 2vw, 28px); }
 
   /* COVER */
+  .cover::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140%;
+    height: 70%;
+    background: radial-gradient(ellipse at 50% 100%, rgba(245, 242, 239, 0.06) 0%, rgba(245, 242, 239, 0.025) 30%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
   .cover .brand {
     color: var(--soft);
     font-size: clamp(22px, 2.6vw, 36px);
@@ -941,7 +953,7 @@
     <div class="slide-inner center stack">
       <img class="mlc-mark" src="assets/mldi-logo.svg" alt="MLDI">
       <h1>Free your team from the repetitive work they&rsquo;re stuck on.</h1>
-      <div class="tag">Internal master deck &middot; v100</div>
+      <div class="tag">Internal master deck &middot; v101</div>
     </div>
   </section>
 
