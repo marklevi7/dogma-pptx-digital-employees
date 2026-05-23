@@ -99,62 +99,73 @@
     z-index: 0;
   }
   .aurora-bottom {
-    bottom: 0;
+    bottom: -5%;
     left: -10%; right: -10%;
-    height: 50%;
     background:
-      /* purple pool — left side, tall wispy peak */
-      radial-gradient(ellipse 22% 90% at 18% 100%, rgba(90, 0, 180, 0.95) 0%, rgba(60, 0, 140, 0.4) 40%, transparent 65%),
-      radial-gradient(ellipse 8% 75% at 25% 95%, rgba(120, 20, 220, 0.7) 0%, transparent 50%),
-      radial-gradient(ellipse 14% 50% at 14% 100%, rgba(70, 0, 160, 0.5) 0%, transparent 45%),
-      /* dark gap — center stays empty */
-      /* blue pool — right side, shorter but intense */
-      radial-gradient(ellipse 20% 75% at 76% 100%, rgba(15, 50, 220, 0.9) 0%, rgba(10, 30, 180, 0.35) 45%, transparent 65%),
-      radial-gradient(ellipse 7% 60% at 70% 98%, rgba(30, 80, 255, 0.6) 0%, transparent 45%),
-      radial-gradient(ellipse 10% 45% at 84% 100%, rgba(40, 130, 255, 0.5) 0%, transparent 40%),
-      /* faint connecting wash along the very bottom */
-      radial-gradient(ellipse 80% 15% at 50% 100%, rgba(40, 20, 100, 0.35) 0%, transparent 70%);
-    filter: blur(45px);
+      /* v111 base — spread fingers */
+      radial-gradient(ellipse 8% 95% at 12% 100%, rgba(80, 0, 160, 0.9) 0%, transparent 55%),
+      radial-gradient(ellipse 12% 70% at 20% 100%, rgba(100, 20, 190, 0.7) 0%, transparent 50%),
+      radial-gradient(ellipse 6% 85% at 30% 100%, rgba(60, 10, 150, 0.6) 0%, transparent 45%),
+      radial-gradient(ellipse 10% 100% at 38% 100%, rgba(70, 0, 200, 0.8) 0%, transparent 50%),
+      radial-gradient(ellipse 5% 55% at 48% 100%, rgba(40, 30, 140, 0.5) 0%, transparent 40%),
+      radial-gradient(ellipse 14% 80% at 60% 100%, rgba(20, 50, 200, 0.65) 0%, transparent 48%),
+      radial-gradient(ellipse 8% 95% at 72% 100%, rgba(25, 70, 230, 0.85) 0%, transparent 50%),
+      radial-gradient(ellipse 10% 65% at 82% 100%, rgba(30, 100, 255, 0.7) 0%, transparent 45%),
+      radial-gradient(ellipse 6% 80% at 90% 100%, rgba(40, 130, 255, 0.6) 0%, transparent 42%),
+      /* deep dark blobs between the bright fingers */
+      radial-gradient(ellipse 10% 60% at 16% 100%, rgba(20, 0, 60, 0.9) 0%, transparent 50%),
+      radial-gradient(ellipse 8% 50% at 34% 100%, rgba(15, 0, 50, 0.8) 0%, transparent 45%),
+      radial-gradient(ellipse 12% 45% at 52% 100%, rgba(10, 5, 40, 0.85) 0%, transparent 48%),
+      radial-gradient(ellipse 9% 55% at 68% 100%, rgba(5, 10, 50, 0.8) 0%, transparent 45%),
+      radial-gradient(ellipse 8% 40% at 86% 100%, rgba(8, 15, 55, 0.7) 0%, transparent 42%);
+    filter: blur(35px);
   }
   .aurora-bottom::after {
     content: '';
     position: absolute;
     bottom: 0; left: 0; right: 0;
-    height: 25%;
+    height: 30%;
     background:
-      /* bright cores at the base of each pool */
-      radial-gradient(ellipse 12% 100% at 18% 100%, rgba(130, 0, 255, 0.95) 0%, transparent 50%),
-      radial-gradient(ellipse 6% 80% at 24% 100%, rgba(100, 10, 200, 0.7) 0%, transparent 40%),
-      radial-gradient(ellipse 10% 100% at 76% 100%, rgba(20, 70, 255, 0.95) 0%, transparent 48%),
-      radial-gradient(ellipse 5% 70% at 82% 100%, rgba(50, 140, 255, 0.65) 0%, transparent 38%);
-    filter: blur(10px);
+      radial-gradient(ellipse 6% 100% at 14% 100%, rgba(130, 0, 255, 0.95) 0%, transparent 50%),
+      radial-gradient(ellipse 8% 100% at 36% 100%, rgba(90, 0, 210, 0.85) 0%, transparent 45%),
+      radial-gradient(ellipse 5% 80% at 58% 100%, rgba(30, 50, 200, 0.7) 0%, transparent 40%),
+      radial-gradient(ellipse 7% 100% at 74% 100%, rgba(25, 80, 255, 0.95) 0%, transparent 48%),
+      radial-gradient(ellipse 5% 70% at 88% 100%, rgba(40, 140, 255, 0.75) 0%, transparent 42%);
+    filter: blur(12px);
   }
   .aurora-top {
-    top: 0;
+    top: -5%;
     left: -10%; right: -10%;
-    height: 50%;
     transform: scaleY(-1);
     background:
-      radial-gradient(ellipse 22% 90% at 18% 100%, rgba(90, 0, 180, 0.95) 0%, rgba(60, 0, 140, 0.4) 40%, transparent 65%),
-      radial-gradient(ellipse 8% 75% at 25% 95%, rgba(120, 20, 220, 0.7) 0%, transparent 50%),
-      radial-gradient(ellipse 14% 50% at 14% 100%, rgba(70, 0, 160, 0.5) 0%, transparent 45%),
-      radial-gradient(ellipse 20% 75% at 76% 100%, rgba(15, 50, 220, 0.9) 0%, rgba(10, 30, 180, 0.35) 45%, transparent 65%),
-      radial-gradient(ellipse 7% 60% at 70% 98%, rgba(30, 80, 255, 0.6) 0%, transparent 45%),
-      radial-gradient(ellipse 10% 45% at 84% 100%, rgba(40, 130, 255, 0.5) 0%, transparent 40%),
-      radial-gradient(ellipse 80% 15% at 50% 100%, rgba(40, 20, 100, 0.35) 0%, transparent 70%);
-    filter: blur(45px);
+      radial-gradient(ellipse 8% 95% at 12% 100%, rgba(80, 0, 160, 0.9) 0%, transparent 55%),
+      radial-gradient(ellipse 12% 70% at 20% 100%, rgba(100, 20, 190, 0.7) 0%, transparent 50%),
+      radial-gradient(ellipse 6% 85% at 30% 100%, rgba(60, 10, 150, 0.6) 0%, transparent 45%),
+      radial-gradient(ellipse 10% 100% at 38% 100%, rgba(70, 0, 200, 0.8) 0%, transparent 50%),
+      radial-gradient(ellipse 5% 55% at 48% 100%, rgba(40, 30, 140, 0.5) 0%, transparent 40%),
+      radial-gradient(ellipse 14% 80% at 60% 100%, rgba(20, 50, 200, 0.65) 0%, transparent 48%),
+      radial-gradient(ellipse 8% 95% at 72% 100%, rgba(25, 70, 230, 0.85) 0%, transparent 50%),
+      radial-gradient(ellipse 10% 65% at 82% 100%, rgba(30, 100, 255, 0.7) 0%, transparent 45%),
+      radial-gradient(ellipse 6% 80% at 90% 100%, rgba(40, 130, 255, 0.6) 0%, transparent 42%),
+      radial-gradient(ellipse 10% 60% at 16% 100%, rgba(20, 0, 60, 0.9) 0%, transparent 50%),
+      radial-gradient(ellipse 8% 50% at 34% 100%, rgba(15, 0, 50, 0.8) 0%, transparent 45%),
+      radial-gradient(ellipse 12% 45% at 52% 100%, rgba(10, 5, 40, 0.85) 0%, transparent 48%),
+      radial-gradient(ellipse 9% 55% at 68% 100%, rgba(5, 10, 50, 0.8) 0%, transparent 45%),
+      radial-gradient(ellipse 8% 40% at 86% 100%, rgba(8, 15, 55, 0.7) 0%, transparent 42%);
+    filter: blur(35px);
   }
   .aurora-top::after {
     content: '';
     position: absolute;
     bottom: 0; left: 0; right: 0;
-    height: 25%;
+    height: 30%;
     background:
-      radial-gradient(ellipse 12% 100% at 18% 100%, rgba(130, 0, 255, 0.95) 0%, transparent 50%),
-      radial-gradient(ellipse 6% 80% at 24% 100%, rgba(100, 10, 200, 0.7) 0%, transparent 40%),
-      radial-gradient(ellipse 10% 100% at 76% 100%, rgba(20, 70, 255, 0.95) 0%, transparent 48%),
-      radial-gradient(ellipse 5% 70% at 82% 100%, rgba(50, 140, 255, 0.65) 0%, transparent 38%);
-    filter: blur(10px);
+      radial-gradient(ellipse 6% 100% at 14% 100%, rgba(130, 0, 255, 0.95) 0%, transparent 50%),
+      radial-gradient(ellipse 8% 100% at 36% 100%, rgba(90, 0, 210, 0.85) 0%, transparent 45%),
+      radial-gradient(ellipse 5% 80% at 58% 100%, rgba(30, 50, 200, 0.7) 0%, transparent 40%),
+      radial-gradient(ellipse 7% 100% at 74% 100%, rgba(25, 80, 255, 0.95) 0%, transparent 48%),
+      radial-gradient(ellipse 5% 70% at 88% 100%, rgba(40, 140, 255, 0.75) 0%, transparent 42%);
+    filter: blur(12px);
   }
   .aurora-dim { opacity: 0.5; }
   .cover .brand {
@@ -1008,7 +1019,7 @@
     <div class="slide-inner center stack">
       <img class="mlc-mark" src="assets/mldi-logo.svg" alt="MLDI">
       <h1>Free your team from the repetitive work they&rsquo;re stuck on.</h1>
-      <div class="tag">Internal master deck &middot; v112</div>
+      <div class="tag">Internal master deck &middot; v113</div>
     </div>
   </section>
 
