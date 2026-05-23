@@ -787,18 +787,19 @@
       </g>
     </symbol>
 
-    <!-- pattern-3: dense uniform dots, fading via gradient mask (compact, scalable) -->
+    <!-- pattern-3: halftone dot field, gradient-masked fade from top to bottom -->
     <symbol id="halftone-3" viewBox="0 0 120 30">
       <defs>
         <linearGradient id="ht3-grad" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stop-color="black"/>
-          <stop offset="20%" stop-color="black"/>
-          <stop offset="55%" stop-opacity="0.3" stop-color="white"/>
+          <stop offset="30%" stop-color="black"/>
+          <stop offset="60%" stop-color="#333"/>
+          <stop offset="80%" stop-color="#888"/>
           <stop offset="100%" stop-color="white"/>
         </linearGradient>
         <mask id="ht3-mask"><rect width="120" height="30" fill="url(#ht3-grad)"/></mask>
-        <pattern id="ht3-dots" width="0.24" height="0.24" patternUnits="userSpaceOnUse">
-          <circle cx="0.12" cy="0.12" r="0.045" fill="white"/>
+        <pattern id="ht3-dots" width="0.42" height="0.42" patternUnits="userSpaceOnUse">
+          <circle cx="0.21" cy="0.21" r="0.08" fill="white"/>
         </pattern>
       </defs>
       <rect width="120" height="30" fill="url(#ht3-dots)" mask="url(#ht3-mask)"/>
@@ -943,7 +944,7 @@
     <div class="slide-inner center stack">
       <img class="mlc-mark" src="assets/mldi-logo.svg" alt="MLDI">
       <h1>Free your team from the repetitive work they&rsquo;re stuck on.</h1>
-      <div class="tag">Internal master deck &middot; v94</div>
+      <div class="tag">Internal master deck &middot; v95</div>
     </div>
   </section>
 
@@ -997,10 +998,6 @@
         <div class="platform"><svg class="ic-md"><use href="#ic-drive"/></svg><span>Google Drive</span></div>
         <div class="platform"><svg class="ic-md"><use href="#ic-slack"/></svg><span>Slack</span></div>
         <div class="platform"><svg class="ic-md"><use href="#ic-calendar"/></svg><span>Calendar</span></div>
-        <div class="platform"><svg class="ic-md"><use href="#ic-email"/></svg><span>Microsoft Office</span></div>
-        <div class="platform"><svg class="ic-md"><use href="#ic-crm"/></svg><span>ERP systems</span></div>
-        <div class="platform"><svg class="ic-md"><use href="#ic-doc"/></svg><span>Document management</span></div>
-        <div class="platform"><svg class="ic-md"><use href="#ic-cloud"/></svg><span>Industry platforms</span></div>
       </div>
     </div>
   </section>
